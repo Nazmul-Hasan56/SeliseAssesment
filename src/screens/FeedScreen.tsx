@@ -55,6 +55,7 @@ const FeedScreen: React.FC = () => {
     });
   };
 
+  //adding posts
   const handleAddPost = (newPost: { name: string; content: string }) => {
     const post: Post = {
       id: Date.now().toString(),
@@ -65,6 +66,7 @@ const FeedScreen: React.FC = () => {
     setPosts([post, ...posts]);
   };
 
+  //adding likes to post
   const handleLikePost = (id: string) => {
     setPosts(posts.map(post => post.id === id ? { ...post, likes: post.likes + 1 } : post));
   };
